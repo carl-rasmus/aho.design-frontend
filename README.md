@@ -1,8 +1,7 @@
-# aho-design-nuxt
+aho-design-nuxt
 
-> My unreal Nuxt.js project
 
-## Build Setup
+Build Setup
 
 ``` bash
 # install dependencies
