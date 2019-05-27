@@ -1,0 +1,76 @@
+@import "assets/css/variables"
+
+p, ul, li
+  color: $grey-dark
+h1, h2, h3, h4, h5
+  color: $grey-medium-dark
+
+h1, h2, h3
+  font-weight: 600
+  font-family: $font-header
+  line-height: 1.2
+
+h1
+  font-size: 4em
+h2
+  font-size: 3em
+  font-weight: 600
+h3
+  font-size: 2em
+h4
+  font-size: 1.5em
+h5
+  font-size: 1.1em
+
+a
+  color: $grey-dark
+  text-decoration: underline
+  text-decoration-color: $grey-medium-light
+  transition: .15s
+  &:hover
+    color: $aho-orange
+    text-decoration-color: $aho-orange
+  &[target=_blank]
+    &::after
+      content: '\2197'
+      text-decoration: none
+
+p
+  font-family: $font-body
+  font-size: 1.1em
+  line-height: 1.5
+  margin-bottom: .6em
+
+
+.byLine
+  display: inline-block
+  h3, h4
+    font-weight: 600
+    font-family: $font-header
+  &:not(:first-of-type)
+    h3, h4, h5
+      &::before
+        display: inline-block
+        content: ",\00a0"
+        font-weight: 400
+        text-decoration: none
+  &:last-of-type
+      h3, h4, h5
+        &::before
+          display: inline-block
+          content: "\00a0&\00a0"
+          font-weight: 400
+          text-decoration: none
+  &:first-of-type
+    h3, h4, h5
+      &::before
+        display: inline-block
+        content: "by\00a0"
+        font-weight: 400
+        text-decoration: none
+.listMedium
+  font-size: 1.3em
+  line-height: 1.8
+.listLarge
+  font-size: 1.6em
+  line-height: 1.8
