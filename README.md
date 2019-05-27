@@ -1,4 +1,4 @@
-aho-design-nuxt
+aho.design: Frontend
 
 
 Build Setup
@@ -18,4 +18,4 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+[Nuxt.js docs](https://nuxtjs.org).
