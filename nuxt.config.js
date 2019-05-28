@@ -50,13 +50,7 @@ export default {
   css: [
     // CSS file in the project
     // 'bulma',
-    '@/assets/css/_bulma/bulma.sass',
-    '@/assets/css/_variables.sass',
-    '@/assets/css/_main.sass',
-    '@/assets/css/_typo.sass',
-    '@/assets/css/_course.sass',
-    '@/assets/css/_thumbs.sass'
-
+    '@/assets/css/site.sass',
   ],
 
   /*
