@@ -25,9 +25,7 @@
         <h3>Participatory students</h3>
         <ul v-if="course.participants">
           <li v-for="participants in course.participants" class="listMedium courseParticipants">
-            <nuxt-link :to="`/student/${participants.slug.current}`">
-              {{ participants.firstName }}
-            </nuxt-link>
+            <nuxt-link :to="`/student/${participants.slug.current}`">{{ participants.firstName }}</nuxt-link>
           </li>
         </ul>
       </div>

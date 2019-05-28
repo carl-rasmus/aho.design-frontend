@@ -12,8 +12,8 @@
         </h5>
       </div>
       <div class="column is-full">
-        <div class="galleryContainer">
-          <div v-for="project in result.projects" class="thumbContainer">
+        <div class=" columns galleryContainer">
+          <div v-for="project in result.projects" class="column is-full-mobile is-half-tablet is-one-third-desktop thumbContainer">
             <nuxt-link :to="`/project/${project.slug.current}`" class="thumbLink">
               <base-image v-if="project.headerImage" :image="project.headerImage" class="thumbImage"/>
               <h3>{{ project.name }}</h3>
@@ -25,6 +25,7 @@
                 </nuxt-link>
               </li>
             </ul>
+            <h5 v-if="project.task.duration">Effective work time: <b>{{project.task.duration}}</b></h5>
           </div>
         </div>
       </div>
@@ -51,7 +52,8 @@ export default {
         "projects": *[_type == 'project' && references(^._id)]{
           ...,
           headerImage{..., asset->},
-          authors[]->{...}
+          authors[]->{...},
+          task->{duration}
         }
       }[0]
     `, {

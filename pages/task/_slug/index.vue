@@ -18,7 +18,7 @@
       </div>
       <div class="column is-full">
         <div class="columns galleryContainer">
-          <div v-for="project in result.projects" class=" column is-full-mobile is-half-tablet is-one-third-desktop thumbContainer">
+          <div v-for="project in result.projects" class="column is-full-mobile is-half-tablet is-one-third-desktop thumbContainer">
             <nuxt-link :to="`/project/${project.slug.current}`" class="thumbLink">
               <base-image v-if="project.headerImage" :image="project.headerImage" class="thumbImage"/>
               <h3 v-if="project.name">{{ project.name }}</h3>

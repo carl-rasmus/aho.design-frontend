@@ -18,6 +18,13 @@
         </ul>
       </div>
     </div>
+    <div class="columns">
+      <div class="column is-three-quarters-tablet">
+        <p class="disclaimer"><b>Note:</b> This is not an official archive of student projects from the Oslo School of Architecture and design.
+          <br>Rather it's a documentation of courses and modules run by Lars Marcus Vedeler (ass. prof.)
+        </p>
+      </div>
+    </div>
   </section>
 </template>
 

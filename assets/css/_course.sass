@@ -2,11 +2,11 @@
 
 .courseParticipants
   display: inline-block
-  margin-right: .3em
-  &::after
-    content: ","
-
-iframe
-  margin: 0 auto
-  width: 560px
-  height: 315px
+  margin-right: .2em
+  &:not(:last-of-type)
+    &::after
+      content: ",\00a0"
+p
+  &.disclaimer
+    margin-top: 6rem
+    font-size: 0.8em
