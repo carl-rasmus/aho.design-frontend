@@ -72,7 +72,7 @@ export default {
         course,
         title: course.name + ', ' + course.year,
         url: 'https://aho.design/course/' + course.slug.current,
-        description: course.blurb[0].children[0].text
+        description: course.blurb && course.blurb[0].children[0].text || '',
       }
     }
   },

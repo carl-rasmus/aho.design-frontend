@@ -49,7 +49,7 @@
             </div>
             <div v-else-if="supportImage._type == 'videoUrl'">
               <!-- {{supportImage.url}} -->
-              <iframe :src="supportImage.url" width="560" height="350" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+              <iframe :src="getIframeSrc(supportImage)" width="560" height="350" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
           </li>
         </ul>
@@ -62,6 +62,7 @@
 import sanityClient from '@/utils/sanityClient'
 import BlockContent from 'sanity-blocks-vue-component'
 import BaseImage from '@/components/BaseImage'
+import getVideoId from 'get-video-id'
 
 export default {
   components: {
@@ -88,42 +89,11 @@ export default {
 
     if (project) {
       console.log(project)
-
-      //Checks if there are any additional images or videos
-      if (project.projectImages){
-        //Checks is there is a video URL in the projectImages array
-        //and then takes out the ID (and video service) to put them in a embedded thing
-        var i
-        for (var i = 0; i < project.projectImages.length; i++) {
-          if (project.projectImages[i]._type == "videoUrl") {
-            // console.log(project.projectImages[i].url)
-
-            const getVideoId = require('get-video-id')
-            const {id, service} = getVideoId(project.projectImages[i].url)
-            if (service == 'youtube') {
-              const ytUrl = `https://www.youtube.com/embed/${id}`
-              const ytEmbed = '<iframe width="560" height="315" src="'+ ytUrl + '" frameborder="0" allowfullscreen/>'
-              console.log(ytEmbed)
-              project.projectImages[i].url = ytUrl
-            }
-
-            else if(service == 'vimeo'){
-              console.log(id)
-              const vimUrl = `https://player.vimeo.com/video/${id}?color=e64800&title=0&byline=0&portrait=0`
-              const vimEmbed = '<iframe src="'+ vimUrl + '" width="335" height="188" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
-              project.projectImages[i].url = vimUrl
-            }
-            else{
-
-            }
-          }
-        }
-      }
       return {
         project,
         title: project.name,
         url: 'https://aho.design/project/' + project.slug.current,
-        description: project.projectDescription[0].children[0].text,
+        description: project.projectDescription && project.projectDescription[0].children[0].text || '',
         image: project.headerImage.asset.url
       }
     }
@@ -143,6 +113,14 @@ export default {
         { hid: 'twitterDescription', name: 'twitter:description', content: this.description },
         { hid: 'twitterImage', name: 'twitter:image', content: this.image},
       ]
+    }
+  },
+  methods: {
+    getIframeSrc(object) {
+      const {id, service} = getVideoId(object.url)
+      return service === 'youtube'
+        ? `https://www.youtube.com/embed/${id}`
+        : `https://player.vimeo.com/video/${id}?color=e64800&title=0&byline=0&portrait=0`
     }
   }
 }

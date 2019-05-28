@@ -72,7 +72,7 @@ export default {
         result,
         title: result.name,
         url: 'https://aho.design/task/' + result.slug.current,
-        description: result.blurb[0].children[0].text
+        description: result.blurb && result.blurb[0].children[0].text || '',
       }
     }
   },
