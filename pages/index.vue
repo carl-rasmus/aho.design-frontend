@@ -11,7 +11,7 @@
           <li v-for="course in courses">
             <h3>
               <nuxt-link :to="`/course/${course.slug.current}`">
-                {{ course.name }}, {{ course.year }}
+                {{ course.name }}
               </nuxt-link>
             </h3>
           </li>
