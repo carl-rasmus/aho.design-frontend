@@ -3,14 +3,14 @@ import pkg from './package'
 export default {
   mode: 'spa',
 
-  generate: {
-    routes: [
-      '/course',
-      '/task',
-      '/project',
-      '/student'
-    ]
-  },
+  // generate: {
+  //   routes: [
+  //     '/course',
+  //     '/task',
+  //     '/project',
+  //     '/student'
+  //   ]
+  // },
 
   /*
   ** Headers of the page
