@@ -1,7 +1,7 @@
 {
   "name": "AHO.design",
   "version": "1.0.0",
-  "description": "Showcasing AHO student projects. System in early development phase. ",
+  "description": "Archive of AHO student projects [Alpha: System in early development phase]. ",
   "author": "Lars Marcus Vedeler",
   "private": true,
   "scripts": {
