@@ -15,6 +15,9 @@
         <h1 v-if="project.name">
           {{ project.name }}
         </h1>
+        <h4 v-if="project.subtitle">
+            {{ project.subtitle }}
+        </h4>
         <ul v-if="project.authors">
           <li v-for="student in project.authors" class="byLine">
             <nuxt-link :to="`/student/${student.slug.current}`">
@@ -77,6 +80,7 @@ export default {
         slug,
         course->{name, year, slug},
         task->{name, slug, duration},
+        subtitle,
         projectDescription,
         headerImage{..., asset->},
         projectImages[]{..., asset->},
