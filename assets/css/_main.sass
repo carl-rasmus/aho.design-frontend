@@ -29,12 +29,15 @@ iframe
 .logo
   height: 28px
   width: 28px
-  background-image: url('/aho_design_symbol.png')
+  background-image: url('/aho_design_symbol.svg')
   background-size: cover
   background-repeat: no-repeat
+  overflow: hidden
   margin-left: 10px
   +tablet
     margin-left: 20px
+    &:hover
+      background-position: 0 100%
 
 .container
   min-height: calc(100vh - 160px)
