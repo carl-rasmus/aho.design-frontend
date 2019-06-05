@@ -53,7 +53,7 @@ export default {
   `).catch(err => console.log(err))
 
     if (result) {
-      console.log(result)
+      // console.log(result)
       return {
         ...result
       }

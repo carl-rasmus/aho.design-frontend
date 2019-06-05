@@ -67,7 +67,7 @@ export default {
       slug: params.slug
     }).catch(err => console.log(err))
     if (course) {
-      console.log(course)
+      // console.log(course)
       return {
         course,
         title: course.name + ', ' + course.year,

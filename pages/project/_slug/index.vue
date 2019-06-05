@@ -92,7 +92,7 @@ export default {
     }).catch(err => console.log(err))
 
     if (project) {
-      console.log(project)
+      // console.log(project)
       return {
         project,
         title: project.name,

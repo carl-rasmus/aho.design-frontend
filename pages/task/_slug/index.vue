@@ -67,7 +67,7 @@ export default {
       slug: params.slug
     }).catch(err => console.log(err))
     if (result) {
-      console.log(result)
+      // console.log(result)
       return {
         result,
         title: result.name,
