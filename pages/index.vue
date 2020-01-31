@@ -6,9 +6,19 @@
         <h4>An archive of student projects.</h4>
       </div>
       <div class="column is-three-fifths is-offset-1">
-        <h2>2019</h2>
+        <h4 class="course_year">2020</h4>
         <ul>
-          <li v-for="course in courses">
+          <li v-for="course in courses_2020">
+            <h3>
+              <nuxt-link :to="`/course/${course.slug.current}`">
+                {{ course.name }}
+              </nuxt-link>
+            </h3>
+          </li>
+        </ul>
+        <h4 class="course_year">2019</h4>
+        <ul>
+          <li v-for="course in courses_2019">
             <h3>
               <nuxt-link :to="`/course/${course.slug.current}`">
                 {{ course.name }}
@@ -36,7 +46,14 @@ export default {
   },
   async asyncData ({ params }) {
     const result = await sanityClient.fetch(`{
-      "courses": *[_type == 'course'] {
+      "courses_2019": *[_type == 'course' && year == 2019] {
+        _id,
+        name,
+        slug,
+        year,
+        participants
+      },
+      "courses_2020": *[_type == 'course' && year == 2020] {
         _id,
         name,
         slug,
