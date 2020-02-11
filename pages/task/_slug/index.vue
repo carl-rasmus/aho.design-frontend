@@ -11,7 +11,7 @@
         <h4 v-if="result.subtitle">{{ result.subtitle }}</h4>
         <h5 v-if="result.duration">Effective work time: <b>{{result.duration}}</b></h5>
       </div>
-      <div class="column is-three-fifths is-offset-1">
+      <div class="column is-three-fifths is-offset-1 task-content">
         <div v-if="result.blurb">
           <block-content :blocks="result.blurb" />
         </div>
